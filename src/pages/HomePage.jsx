@@ -114,11 +114,15 @@ const HomePage = () => {
 
   return (
     <Layout title={"All Product - Best offer"}>
-      <div className="row mt-3">
-        <div className="col-md-2">
-          <h4 className="text-center">Filter By Category</h4>
+      <div className="bg-set"></div>
+      <h1 className="text-center">All Product</h1>
+      <div className="borderSet text-center">{/* heading border */}</div>
 
+      <div className="row">
+        <div className="col-md-2 filterAtResponsive pl-3">
           <div className="d-flex flex-column">
+            <h4 className="filterAtResponsiveHead0">Filter By Category</h4>
+
             {categories?.map((c) => (
               <Checkbox
                 key={c._id}
@@ -129,9 +133,10 @@ const HomePage = () => {
             ))}
           </div>
           {/* Price filter */}
-          <h4 className="text-center mt-4">Filter By Price</h4>
 
-          <div className="d-flex flex-column">
+          <div className="d-flex flex-column ">
+            <h4 className=" mt-4 filterAtResponsiveHead">Filter By Price</h4>
+
             <Radio.Group onChange={(e) => setRadio(e.target.value)}>
               {Prices?.map((p) => (
                 <div key={p._id}>
@@ -139,9 +144,9 @@ const HomePage = () => {
                 </div>
               ))}
             </Radio.Group>
-            <div className="d-flex flex-column">
+            <div className="d-flex flex-column mt-2 filterAtResponsiveBtn">
               <button
-                className="btn btn-danger"
+                className="btn btn-danger  w-50"
                 onClick={() => window.location.reload()}
               >
                 RESET FILTERS
@@ -149,40 +154,53 @@ const HomePage = () => {
             </div>
           </div>
         </div>
+
         <div className="col-md-9">
-          <h1 className="text-center">All Product</h1>
-          <div className="d-flex flex-wrap">
+          <div className="d-flex flex-wrap parentCard">
             {products?.map((p) => (
-              <div className="card m-2" style={{ width: "18rem" }}>
+              <div
+                className="card m-2 responsiveWidth"
+                style={{ width: "18rem" }}
+              >
                 <img
                   src={`${process.env.REACT_APP_API}/api/v1/product/product-photo/${p._id}`}
-                  className="card-img-top"
+                  className="card-img-top imgSize"
                   alt={p.name}
                 />
-                <div className="card-body">
-                  <h5 className="card-title">{p.name}</h5>
-                  <p className="card-text">{p.description.substring(0, 30)}</p>
-                  <p className="card-text">$ {p.price}</p>
+                <div className="card-body responsiveCardText">
+                  <div className="d-flex justify-content-between">
+                    <h5 className="card-title">{p.name}</h5>
 
-                  <button
-                    class="btn btn-primary ms-1"
-                    onClick={() => navigate(`/product/${p.slug}`)}
-                  >
-                    More Details
-                  </button>
-                  <button
-                    class="btn btn-secondary ms-1"
-                    onClick={() => {
-                      setCart([...cart, p]);
-                      localStorage.setItem(
-                        "cart",
-                        JSON.stringify([...cart, p])
-                      );
-                      toast.success("item added to cart");
-                    }}
-                  >
-                    ADD TO CART
-                  </button>
+                    <p className="card-text text-success">
+                      <b>$ {p.price}</b>
+                    </p>
+                  </div>
+
+                  <p className="card-text description">
+                    {p.description.substring(0, 30)}
+                  </p>
+
+                  <div className="d-flex justify-content-between responsiveCardBtn">
+                    <button
+                      class="btn btn-primary ms-1"
+                      onClick={() => navigate(`/product/${p.slug}`)}
+                    >
+                      More Details
+                    </button>
+                    <button
+                      class="btn btn-secondary ms-1 responsiveCardBtn"
+                      onClick={() => {
+                        setCart([...cart, p]);
+                        localStorage.setItem(
+                          "cart",
+                          JSON.stringify([...cart, p])
+                        );
+                        toast.success("item added to cart");
+                      }}
+                    >
+                      ADD TO CART
+                    </button>
+                  </div>
                 </div>
               </div>
             ))}

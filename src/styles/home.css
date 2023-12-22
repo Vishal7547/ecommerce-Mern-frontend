@@ -1,0 +1,240 @@
+.bg-set {
+    background-image: url('../../Images/homeBanner.jpg');
+    /* background-size: cover; */
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-color: #f0f0f0;
+    height: 35vh;
+    width: 100%;
+    background-size: cover;
+}
+
+.imgSize {
+    height: 300px;
+    width: 100%;
+}
+
+.borderSet {
+    height: 10px;
+    width: 30%;
+    background-color: black;
+    border-radius: 30px;
+    margin: auto;
+}
+
+@media screen and (max-width:818px) {
+    .parentCard {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .responsiveWidth {
+        width: 15rem !important;
+    }
+
+
+}
+
+@media screen and (max-width:767px) {
+    .filterAtResponsive {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-around;
+        margin-top: 30px;
+
+    }
+
+    .filterAtResponsiveHead {
+        margin: 0 !important;
+    }
+
+    .filterAtResponsiveBtn button {
+        width: 150px !important;
+
+    }
+
+    .borderSet {
+
+        width: 50%;
+
+    }
+
+}
+
+@media screen and (max-width:511px) {
+
+
+
+
+    .borderSet {
+
+        width: 50%;
+
+    }
+
+    .responsiveWidth {
+        width: 13rem !important;
+    }
+
+    .imgSize {
+        height: 200px;
+        width: 100%;
+    }
+
+    .responsiveCardBtn button {
+        width: 50%;
+        font-size: small;
+    }
+
+    .responsiveCardText div h5 {
+        font-size: medium;
+
+    }
+
+    .responsiveCardText div p {
+        font-size: small;
+
+    }
+
+}
+
+@media screen and (max-width:447px) {
+
+
+
+
+    .borderSet {
+
+        width: 50%;
+
+    }
+
+    .responsiveWidth {
+        width: 10rem !important;
+    }
+
+    .imgSize {
+        height: 150px;
+        width: 100%;
+    }
+
+    .responsiveCardBtn button {
+        width: 50%;
+        font-size: xx-small;
+    }
+
+    .responsiveCardText div h5 {
+        font-size: small;
+
+    }
+
+    .responsiveCardText div p {
+        font-size: xx-small;
+
+    }
+
+}
+
+@media screen and (max-width:351px) {
+
+
+    .filterAtResponsiveHead,
+    .filterAtResponsiveHead0 {
+        font-size: medium;
+    }
+
+    .borderSet {
+
+        width: 60%;
+
+    }
+
+    .responsiveWidth {
+        width: 9rem !important;
+    }
+
+    .imgSize {
+        height: 100px;
+        width: 100%;
+    }
+
+    .responsiveCardBtn {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .responsiveCardBtn button {
+        width: 100%;
+        font-size: xx-small;
+        margin-top: 10px;
+
+    }
+
+    .responsiveCardText div h5 {
+        font-size: x-small;
+
+    }
+
+    .description {
+        font-size: small;
+    }
+
+    .responsiveCardText div p {
+        font-size: xx-small;
+
+    }
+
+}
+
+@media screen and (max-width:319px) {
+
+
+    .filterAtResponsiveHead,
+    .filterAtResponsiveHead0 {
+        font-size: medium;
+    }
+
+    .borderSet {
+
+        width: 70%;
+
+    }
+
+    .responsiveWidth {
+        width: 8rem !important;
+    }
+
+    .imgSize {
+        height: 80px;
+        width: 100%;
+    }
+
+    .responsiveCardBtn {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .responsiveCardBtn button {
+        width: 100%;
+        font-size: xx-small;
+        margin-top: 2px;
+
+    }
+
+    .responsiveCardText div h5 {
+        font-size: x-small;
+
+    }
+
+    .description {
+        font-size: small;
+    }
+
+    .responsiveCardText div p {
+        font-size: xx-small;
+
+    }
+
+}

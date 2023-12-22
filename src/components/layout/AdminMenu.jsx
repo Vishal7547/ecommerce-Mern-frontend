@@ -36,6 +36,10 @@ const AdminMenu = () => {
           >
             Users
           </NavLink>
+          <li className="list-group-item list-group-item-action">Staff</li>
+
+          <li className="list-group-item list-group-item-action">Query</li>
+          <li className="list-group-item list-group-item-action">Logout</li>
         </div>
       </div>
     </>
