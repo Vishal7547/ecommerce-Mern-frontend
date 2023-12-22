@@ -101,7 +101,12 @@
 }
 
 @media screen and (max-width:447px) {
+    .bg-set {
 
+        height: 20vh;
+        width: 100%;
+        background-size: cover;
+    }
 
 
 
@@ -139,6 +144,12 @@
 
 @media screen and (max-width:351px) {
 
+    .bg-set {
+
+        height: 20vh;
+        width: 100%;
+        background-size: cover;
+    }
 
     .filterAtResponsiveHead,
     .filterAtResponsiveHead0 {
@@ -190,6 +201,12 @@
 
 @media screen and (max-width:319px) {
 
+    .bg-set {
+
+        height: 20vh;
+        width: 100%;
+        background-size: cover;
+    }
 
     .filterAtResponsiveHead,
     .filterAtResponsiveHead0 {
