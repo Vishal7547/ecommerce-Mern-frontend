@@ -2,11 +2,14 @@ import React, { useState, useEffect } from "react";
 import Layout from "../components/layout/Layout";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useCart } from "../Context/cart";
+import toast from "react-hot-toast";
 const CategoryProduct = () => {
   const params = useParams();
   const navigate = useNavigate();
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState([]);
+  const [cart, setCart] = useCart();
 
   useEffect(() => {
     if (params?.slug) getPrductsByCat();
@@ -54,7 +57,17 @@ const CategoryProduct = () => {
                     >
                       More Details
                     </button>
-                    <button className="btn btn-secondary ms-1">
+                    <button
+                      className="btn btn-secondary ms-1"
+                      onClick={() => {
+                        setCart([...cart, p]);
+                        localStorage.setItem(
+                          "cart",
+                          JSON.stringify([...cart, p])
+                        );
+                        toast.success("item added to cart");
+                      }}
+                    >
                       ADD TO CART
                     </button>
                   </div>
